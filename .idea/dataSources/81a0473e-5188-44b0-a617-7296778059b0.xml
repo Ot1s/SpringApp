@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="spring_security_app@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="spring_security_app">
+      <ObjectId>24577</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-08-13.18:44:10.508</IntrospectionTimestamp>
+      <IntrospectionStateNumber>776</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11215</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11216</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>11480</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="roles_id_seq">
+      <ObjectId>49327</ObjectId>
+      <StateNumber>775</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="users_id_seq">
+      <ObjectId>49316</ObjectId>
+      <StateNumber>774</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="roles">
+      <ObjectId>49329</ObjectId>
+      <StateNumber>776</StateNumber>
+    </table>
+    <table id="12" parent="3" name="user_roles">
+      <ObjectId>49335</ObjectId>
+      <StateNumber>776</StateNumber>
+    </table>
+    <table id="13" parent="3" name="users">
+      <ObjectId>49318</ObjectId>
+      <StateNumber>776</StateNumber>
+    </table>
+    <column id="14" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>775</StateNumber>
+      <SequenceName>roles_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;roles_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="15" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>775</StateNumber>
+    </column>
+    <index id="16" parent="11" name="roles_pkey">
+      <ObjectId>49333</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="11" name="roles_pkey">
+      <ObjectId>49334</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>roles_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="12" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>776</StateNumber>
+    </column>
+    <column id="19" parent="12" name="role_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>776</StateNumber>
+    </column>
+    <index id="20" parent="12" name="user_roles_user_id_role_id_key">
+      <ObjectId>49338</ObjectId>
+      <ColNames>user_id
+role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="21" parent="12" name="user_roles_user_id_role_id_key">
+      <ObjectId>49339</ObjectId>
+      <ColNames>user_id
+role_id</ColNames>
+      <UnderlyingIndexName>user_roles_user_id_role_id_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="22" parent="12" name="user_roles_user_id_fkey">
+      <ObjectId>49340</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="23" parent="12" name="user_roles_role_id_fkey">
+      <ObjectId>49345</ObjectId>
+      <ColNames>role_id</ColNames>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>roles_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="24" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>774</StateNumber>
+      <SequenceName>users_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="25" parent="13" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>774</StateNumber>
+    </column>
+    <column id="26" parent="13" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>774</StateNumber>
+    </column>
+    <index id="27" parent="13" name="users_pkey">
+      <ObjectId>49325</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="13" name="users_pkey">
+      <ObjectId>49326</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
