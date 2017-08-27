@@ -13,8 +13,21 @@ body {
   line-height: 140%;
 }
 
+div, button, header, footer, section, span,
+ul, li, a, input, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+}
+
 header, footer, section {
   display: block;
+}
+
+header {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 ul {
@@ -29,34 +42,6 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 5px;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-}
-
-input {
-  touch-action: manipulation;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  overflow: visible;
-}
-
-button {
-  touch-action: manipulation;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  overflow: visible;
-  text-transform: none;
-  -webkit-appearance: button;
-}
-
 .header{
   width:100%;
   background: #3ad;
@@ -64,16 +49,15 @@ button {
   z-index: 4;
 }
 
-.headerInner {
+.header-inner {
   position:relative;
   border:0px solid #333;
-  width:1200px;
-  height:250px;
+  width:auto;
+  height:50px;
   margin:0 auto;
-  margin-top:0px;
 }
 
-.headerLeftMenu {
+.header-left-menu {
   height: 50px;
   position: absolute;
   left: 0px;
@@ -81,11 +65,11 @@ button {
   border: 0px solid #1fa2e1;
 }
 
-.headerLeftMenu ul {
+.header-left-menu ul {
   padding-left: 0px;
 }
 
-.headerRightMenu {
+.header-right-menu {
   height: 50px;
   position: absolute;
   right: 0px;
@@ -93,17 +77,17 @@ button {
   border: 0px solid #1fa2e1;
 }
 
-.headerRightMenu ul {
+.header-right-menu ul {
   padding-right: 0px;
 }
 
-.headerMenu ul li {
+.header-menu ul li {
   background: url(../img/split-line-2.png) 0px 0px no-repeat;
   float: left;
   height: 50px;
 }
 
-.headerMenu ul li a {
+.header-menu ul li a {
   margin-top: 0px;
   font-weight: 100;
   border-right: 0px solid #adadad;
@@ -113,48 +97,75 @@ button {
   line-height: 18px;
   font-size: 16px;
   padding: 14px 18px 19px 18px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.headerMenu ul li a:hover {
+.header-menu ul li a:hover {
   background: #fff;
   color: #555;
 }
 
 .logo {
-  position: center;
+  position: absolute;
   left: 5px;
   top: 80px;
 }
 
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1170px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    width: 970px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 750px;
+  }
+}
+
 .wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
   width: 1200px;
   margin: 140px auto 0;
+  min-height: calc(100vh - 120px);
   height: auto !important;
 }
 
 .footer {
-  margin-top: 50px;
-  height: 100%;
+  margin-top: 0px;
+  height: 50px;
   width: 100%;
   background: #3ad;
 }
 
-.footerInner {
+.footer-inner {
   position: relative;
   border: 0px solid #333;
-  width: 1200px;
-  margin: 0 auto;
+  width: auto;
+  margin: 0px auto;
   height: 50px;
 }
 
-.socialMedia {
+.social-media {
   z-index: 1;
   position: absolute;
-  right: 0px;
+  right: 10px;
   bottom: 0px;
 }
 
-.socialMedia a {
+.social-media a {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -162,7 +173,7 @@ button {
   margin-bottom: 0px;
 }
 
-.socialMedia .icon-twitter {
+.social-media .icon-twitter {
   background: url(../img/twitter.png) 0 center no-repeat;
   padding-right: 5px;
   padding-bottom: 20px;
@@ -170,7 +181,7 @@ button {
   margin-right: 0px;
 }
 
-.socialMedia .icon-facebook {
+.social-media .icon-facebook {
   background: url(../img/facebook.png) 0 center no-repeat;
   padding-right: 5px;
   padding-bottom: 20px;
@@ -178,7 +189,7 @@ button {
   margin-right: 0px;
 }
 
-.socialMedia .icon-linkedin {
+.social-media .icon-linkedin {
   background: url(../img/linkedin.png) 0 center no-repeat;
   padding-right: 5px;
   padding-bottom: 20px;
@@ -186,7 +197,7 @@ button {
   margin-right: 0px;
 }
 
-.postBox {
+.post-box {
   border: 0px solid #333;
   background: #fff;
   width: 100%;
@@ -196,7 +207,7 @@ button {
   margin-bottom: 50px;
 }
 
-.postBox h1 {
+.post-box h1 {
   font-family: tahoma, helvetica, sans-serif;
   color:#000;
   font-style:normal;
@@ -206,7 +217,7 @@ button {
   margin-bottom: 20px;
 }
 
-.postBox p {
+.post-box p {
   font-family: tahoma, helvetica, sans-serif;
   color:#000;
   font-style:normal;
@@ -214,120 +225,117 @@ button {
   font-size: 15px;
   margin-bottom: 10px;
 }
-/*------------------------*/
-.container {
-  margin: 140px auto 0;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;
-}
-
+/*-------------------------------*/
 .form-signin {
-  max-width: 330px;
+  max-width: 450px;
   padding: 15px;
   margin: 0 auto;
 }
 
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
-}
-
-.form-signin .checkbox {
-  font-weight: normal;
-}
-
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-
 .form-signin input {
   margin-top: 10px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .form-signin button {
   margin-top: 10px;
 }
 
+.form-heading {
+  padding: 15px;
+  padding-top: 25px;
+  margin: 0 auto;
+  max-width: 450px;
+  font-family: sans-serif;
+  font-size: 150%;
+}
+
 .form-group {
-  margin-bottom: 1rem;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 0;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .btn {
   display: inline-block;
-  font-weight: normal;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
   -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   border: 1px solid transparent;
-  padding: 0.5rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.25;
-  border-radius: 0.25rem;
-  transition: all 0.15s ease-in-out;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.btn:focus, .btn:hover {
+.btn:hover, .btn:focus {
   text-decoration: none;
 }
 
-.btn-lg > .btn {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: 0.3rem;
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.2;
+  border-radius: 6px;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #006dcc;
+  border-color: #0044cc;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #004480;
+  border-color: #002b80;
 }
 
 .btn-primary:focus {
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  color: #fff;
+  background-color: #003666;
+  border-color: #002266;
 }
 
 .btn-block {
   display: block;
-  width: 100%;
-}
-
-.text-center {
-  text-align: center !important;
+  width: 106%;
 }
 
 .has-error {
-  color: red
+  color: red;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000 !important;
+  box-sizing: inherit;
 }

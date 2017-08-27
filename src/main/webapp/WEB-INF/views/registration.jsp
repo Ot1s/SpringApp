@@ -26,8 +26,8 @@
 
 <body>
 <header class="header">
-    <div class="headerInner">
-        <nav class="headerMenu headerLeftMenu">
+    <div class="header-inner">
+        <nav class="header-menu header-left-menu">
 
             <ul>
                 <li><a href="${contextPath}/homepage">Homepage</a></li>
@@ -36,7 +36,7 @@
             </ul>
 
         </nav>
-        <nav class="headerMenu headerRightMenu">
+        <nav class="header-menu header-right-menu">
 
             <ul>
                 <li><a href="${contextPath}/registration">Join</a></li>
@@ -49,7 +49,7 @@
         <a href="#"><img src="../../resources/img/logo.png" alt="There is a logo"></a>
     </div>
 </header>
-<div class="container">
+<div class="wrapper">
 
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
@@ -81,8 +81,8 @@
 
 </div>
 <footer class="footer">
-    <div class="footerInner">
-        <div class="socialMedia">
+    <div class="footer-inner">
+        <div class="social-media">
             <a class="icon-linkedin" href="#" title="LinkedIn" target="_blank"></a>
             <a class="icon-twitter" href="#" title="Twitter" target="_blank"></a>
             <a class="icon-facebook" href="#" title="Facebook" target="_blank"></a>
